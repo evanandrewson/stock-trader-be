@@ -20,7 +20,7 @@ describe('auth routes', () => {
     return mongoose.connection.close();
   });
 
-  it('can sign up a new user', () => {
+  it.skip('can sign up a new user', () => {
     return request(app)
       .post('/api/v1/auth/signup')
       .send({ username: 'test', password: 'test'})
@@ -32,7 +32,7 @@ describe('auth routes', () => {
       })
   });
 
-  it('can log in an existing user', () => {
+  it.skip('can log in an existing user', () => {
     User.create({ username: 'test', password: 'test'})
       .then(() => {
         return request(app)
